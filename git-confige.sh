@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Настройка имени и email
 git config --global user.name "SiraadjRoss"
 git config --global user.email "siraadjibnross@gmail.com"
