@@ -13,8 +13,8 @@
 (defvar *root-partition* "2")
 (defvar *hostname* "arch-desktop")
 (defvar *username* "siraadj")
-(defvar *root-password* "Tanatos-7374")
-(defvar *user-password* "Tanatos-1")
+(defvar *root-password* "root")
+(defvar *user-password* "siraadj")
 (defvar *timezone* "Europe/Moscow")
 (defvar *locale* "en_US.UTF-8")
 
