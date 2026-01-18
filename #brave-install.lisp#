@@ -34,7 +34,7 @@
   (format t "[ DONE ] brave-browser installed!~%"))
 
 (defun chrome-browser ()
-(format t ">> Starting chrome-browser installer (SBCL script)...~%")
+  (format t ">> Starting chrome-browser installer (SBCL script)...~%")
 ;; Exequite comand from the siraadj user	
   (run-user-command "git clone https://aur.archlinux.org/google-chrome.git")
   (run-user-command "cd /home/siraadj/google-chrome && makepkg -s")
