@@ -1,10 +1,11 @@
 #!/usr/bin/sbcl --script
 
 ;;;; Brave browser installer (conceptual, educational use only!)
-
+(require :sb-posix)
 
 (defpackage :brave-browser-install
   (:use :cl :sb-ext)
+  (:import-from :sb-posix :chdir)
   (:export :main))
 (in-package :brave-browser-install)
 
@@ -26,7 +27,10 @@
       (progn
 	(format t ">> Starting brave-browser installer (SBCL script)...~%")
 	(run-command "git clone https://aur.archlinux.org/brave-bin.git")
-	(run-command "cd brave-bin && makepkg -si")
+	(chdir "brave-bin")
+	(run-command "su siraadj && makepkg -s")
+	(run-command "pacman -U *.zst")
+;;	(run-command "cd brave-bin && makepkg -si")
 ;;	(run-command "makepkg -si")
 	(format t "[ DONE ] brave-browser installed!~%"))
     (error (e)
