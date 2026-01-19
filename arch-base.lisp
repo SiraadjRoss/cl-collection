@@ -77,6 +77,8 @@
   ;; Create user
   (chroot-run (format nil "useradd -m -G wheel -s /bin/bash ~A" *username*))
   (chroot-run (format nil "echo '~A:~A' | chpasswd" *username* *user-password*))
+  ;;Enable sudo for wheel
+  (chroot-run "sed -i 's/# %wheel ALL=(ALL:ALL) ALL/  %wheel ALL=(ALL:ALL) ALL/' /etc/sudoers")
   ;; Init pacman keyring
   (init-pacman-keyring)
   ;; Enable NetworkManager
