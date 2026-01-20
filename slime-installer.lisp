@@ -40,8 +40,8 @@
                          :if-does-not-exist :create
                          :if-exists :append)
       (format out "~%~%;;; === Автоматически добавлено install-slime.lisp ===~%")
-      (format out "~A~%" config-line)
       (format out "(require 'asdf)~%")
+      (format out "~A~%" config-line)
       (format out "(asdf:load-system :uiop)~%")
       (format out ";;; ==============================================~%"))
     (format t "Добавлена строка в ~~/.sbclrc:~%  ~A~%" config-line)))
