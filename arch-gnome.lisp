@@ -58,7 +58,7 @@
   (run-command "genfstab -U /mnt >> /mnt/etc/fstab"))
 
 (defun chroot-run (cmd)
-  (run-command (format nil "arch-chroot /mnt /bin/sh -c '~A'" cmd)))
+  (run-command (format nil "arch-chroot /mnt /bin/sh -c ~s" cmd)))
 
 (defun init-pacman-keyring ()
   (format t "Imitiation pacman keyring...~%")
