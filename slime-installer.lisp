@@ -42,6 +42,7 @@
       (format out "~%~%;;; === Автоматически добавлено install-slime.lisp ===~%")
       (format out "~A~%" config-line)
       (format out "(require 'asdf)~%")
+      (format out "(asdf:load-system :uiop)~%")
       (format out ";;; ==============================================~%"))
     (format t "Добавлена строка в ~~/.sbclrc:~%  ~A~%" config-line)))
 
