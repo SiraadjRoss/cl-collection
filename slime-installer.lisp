@@ -60,8 +60,7 @@
         (ensure-sbclrc-configured)
         (print-emacs-instructions))
     (error (e)
-      (format *error-output* "Ошибка: ~A~%" e)
-      (uiop:quit 1))))
+      (format *error-output* "Ошибка: ~A~%" e))))
 
 ;; Запуск
 (main)
