@@ -1,16 +1,16 @@
 #!/usr/bin/sbcl --script
 
-;;;; Brave browser installer (conceptual, educational use only!)
+;;;; AUR software installer (conceptual, educational use only!)
 (require :sb-posix)
 
-(defpackage :brave-browser-install
+(defpackage :aur-software-installer
   (:use :cl :sb-ext)
-  (:import-from :sb-posix :chdir)
   (:export :main))
-(in-package :brave-browser-install)
+(in-package :aur-software-installer)
 
+(defvar *software-list* ((name . url)))
 
-(defun run-command (cmd &key (output t) (error-output t))
+(defun run-shell-command (cmd &key (output t) (error-output t))
   "Execute shell command. cmd is string"
   (let ((exit-code (sb-ext:process-exit-code
                     (sb-ext:run-program "/bin/sh"
