@@ -10,7 +10,7 @@
 ;;;;------------------------------------------------------------------------------------------
 
 (defpackage :arch-install
-  (:use :cl :sb-ext)
+  (:use :cl :sb-ext :sh-lib)
   (:export :main))
 (in-package :arch-install)
 (load "sh-lib.lisp")
