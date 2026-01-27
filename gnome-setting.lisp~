@@ -1,0 +1,11 @@
+#!/usr/bin/sbcl --script
+(load "sh-lib.lisp")
+
+(defpackage :gi
+  (:use :cl :sb-ext :sl)
+  (:export :run-command
+	   :chroot-run))
+(in-package :gi)
+
+(run-command "dbus-run-session gsettings set org.gnome.desktop.input-sources sources \"[('xkb', 'us'), ('xkb', 'ru')]\"")
+(run-command "dbus-run-session gsettings set org.gnome.desktop.input-sources xkb-options \"['grp:alt_shift_toggle']\"")

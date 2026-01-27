@@ -1,8 +1,8 @@
-(defpackage :sh-lib
+(defpackage :sl
   (:use :cl :sb-ext)
   (:export :run-command
 	   :chroot-run))
-(in-package :sh-lib)
+(in-package :sl)
 
 (defun run-command (cmd &key (output t) (error-output t))
   "Execute shell command. cmd is string"
