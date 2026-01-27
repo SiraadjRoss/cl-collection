@@ -8,12 +8,12 @@
     (require "asdf"))      ; to make asdf available
   (asdf:find-system :uiop)) ; to make uiop available
 ;;;;------------------------------------------------------------------------------------------
+(load "sh-lib.lisp")
 
 (defpackage :arch-install
   (:use :cl :sb-ext)
   (:export :main))
 (in-package :arch-install)
-(load "sh-lib.lisp")
 
 (defvar *target-disk* "/dev/sda")
 (defvar *efi-partition* "1")
